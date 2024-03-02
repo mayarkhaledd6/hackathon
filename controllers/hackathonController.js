@@ -38,6 +38,18 @@ export async function getHackathonById(req, res) {
   }
 }
 
+// Get a specific hackathon by ID
+export async function getHackathonByUserId(req, res) {
+  try
+  {
+    const result= await Hackathon.findByUserId(req.params.id);
+    res.json(result);
+  }
+  catch (error) {
+    res.status(500).json({ error: 'Error retrieving hackathon with userid " '|| req.params.id ||' '|| error.message  });
+  }
+}
+
 // Update details of a specific hackathon
 export async function updateHackathon(req, res) {
   try

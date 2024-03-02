@@ -1,7 +1,7 @@
 // routes/hackathonRoutes.js
 
 import { Router } from 'express';
-import { getAllHackathons, getHackathonById, createHackathon, updateHackathon, deleteHackathon  } from '../controllers/hackathonController.js';
+import { getAllHackathons, getHackathonById, getHackathonByUserId, createHackathon, updateHackathon, deleteHackathon  } from '../controllers/hackathonController.js';
 
 const router = Router();
 
@@ -10,6 +10,9 @@ router.get('/gethackathons', getAllHackathons);
 
 // Route to get a hackathon by ID
 router.get('/gethackathonbyid/:id', getHackathonById);
+
+// Route to get a hackathon by ID
+router.get('/gethackathonbyuserid/:id', getHackathonByUserId);
 
 // Route to create a new hackathon
 router.post('/addhackathon', createHackathon);
