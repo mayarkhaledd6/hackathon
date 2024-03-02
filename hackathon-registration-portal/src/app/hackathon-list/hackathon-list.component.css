@@ -9,4 +9,75 @@
   .mat-card-header {
     background-color: #f0f0f0;
   }
-  
+  /* styles.css (or any other CSS file you use) */
+
+  /* styles.css */
+
+/* Container for the list of hackathons */
+.hackathon-list-container {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+/* Hackathon card */
+.hackathon-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between; /* Align items evenly */
+  align-items: center; /* Center items vertically */
+}
+
+/* Hackathon name and theme */
+.hackathon-card > div:nth-child(1) {
+  flex: 1; /* Take up remaining space */
+}
+
+/* Hackathon details */
+.hackathon-card > div:nth-child(2) {
+  flex: 2; /* Take up double space */
+  padding: 0 10px; /* Add padding */
+}
+
+/* Buttons */
+.hackathon-card > div:nth-child(3) {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  justify-content: flex-end; /* Align items to the end */
+}
+
+/* Button */
+.hackathon-card button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Primary button */
+.hackathon-card button[color="primary"] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Accent button */
+.hackathon-card button[color="accent"] {
+  background-color: #6c695e;
+  color: #fff;
+}
+
+/* Button hover effect */
+.hackathon-card button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+  /* For smaller screens, switch to a single column layout */
+  .hackathon-card {
+    flex-direction: column; /* Stack items vertically */
+  }
+}
