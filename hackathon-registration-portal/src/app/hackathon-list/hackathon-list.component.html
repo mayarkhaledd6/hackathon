@@ -1,4 +1,4 @@
-<div class="hackathon-list-container">
+<div class="hackathon-list-container" >
   <h2>Hackathon List</h2>
   <div *ngFor="let hackathon of hackathons">
     <div class="hackathon-card">
@@ -12,7 +12,8 @@
       </div>
       <div>
         <button color="primary">Register</button>
-        <button color="accent">Details</button>
+        <button color="accent" >Details</button>
+        <!-- <button color="accent" (click)="btnDetails(hackathon.id);">Details</button> -->
       </div>
     </div>
   </div>

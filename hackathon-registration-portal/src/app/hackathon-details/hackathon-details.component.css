@@ -1,18 +1,86 @@
 .hackathon-details-container {
-    padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.hackathon-details-container h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.hackathon-details-container div {
+  margin-bottom: 20px;
+}
+
+.hackathon-details-container p {
+  margin-bottom: 10px;
+}
+
+.hackathon-details-container strong {
+  font-weight: 700;
+}
+
+.hackathon-details-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hackathon-details-container ul li {
+  margin-bottom: 5px;
+  margin-left: 25px;
+}
+
+.hackathon-details-container ul li:before {
+  content: '•';
+  margin-right: 5px;
+  color: #37a000;
+}
+
+.hackathon-details-container h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .hackathon-details-container {
+    padding: 30px;
+    border-radius: 10px;
   }
-  
+
+  .hackathon-details-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
   .hackathon-details-container h3 {
+    font-size: 22px;
     margin-top: 20px;
+    margin-bottom: 15px;
   }
-  
-  .hackathon-details-container ul {
-    margin-top: 10px;
-    list-style-type: none;
-    padding-left: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .hackathon-details-container {
+    padding: 20px;
+    border-radius: 5px;
   }
-  
-  .hackathon-details-container ul li {
-    margin-bottom: 5px;
+
+  .hackathon-details-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
   }
-  
+
+  .hackathon-details-container h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+}
