@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { AppModule } from '../app.module';
-
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,10 +10,19 @@ export class SignupComponent {
   username: string = '';
   password: string = '';
   email: string = '';
-  fullName: string = '';
+
+  constructor(private authService: AuthService) {}
 
   signup() {
-    // Implement signup functionality
-    console.log('Sign Up clicked');
+    this.authService.registerUser(this.username, this.email, this.password)
+      .subscribe(success => {
+        if (success) {
+          // Redirect or show success message
+          console.log('Registration successful');
+        } else {
+          // Show error message
+          console.log('Registration failed');
+        }
+      });
   }
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Hackathon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Add New Hackathon</h2>
+    <form (submit)="addHackathon()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="hackathon.name" required>
+      </div>
+      <div class="form-group">
+        <label for="theme">Theme:</label>
+        <input type="text" id="theme" name="theme" [(ngModel)]="hackathon.theme" required>
+      </div>
+      <div class="form-group">
+        <label for="registrationDateRange">Registration Date Range:</label>
+        <input type="text" id="registrationDateRange" name="registrationDateRange" [(ngModel)]="hackathon.registrationDateRange" required>
+      </div>
+      <div class="form-group">
+        <label for="eventDate">Event Date:</label>
+        <input type="date" id="eventDate" name="eventDate" [(ngModel)]="hackathon.eventDate" required>
+      </div>
+      <div class="form-group">
+        <label for="challengeTitles">Challenge Titles:</label>
+        <input type="text" id="challengeTitles" name="challengeTitles" [(ngModel)]="hackathon.challengeTitles" required>
+      </div>
+      <div class="form-group">
+        <label for="maxTeamSize">Max Team Size:</label>
+        <input type="number" id="maxTeamSize" name="maxTeamSize" [(ngModel)]="hackathon.maxTeamSize" required>
+      </div>
+      <div class="form-group">
+        <label for="maxTeams">Max Teams:</label>
+        <input type="number" id="maxTeams" name="maxTeams" [(ngModel)]="hackathon.maxTeams" required>
+      </div>
+      <button type="submit">Add Hackathon</button>
+    </form>
+  </div>
+</body>
+</html>
+

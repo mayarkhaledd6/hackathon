@@ -1,23 +1,37 @@
-<link rel="stylesheet" href="../../styles.css">
-<div class="signup-container">
-  <h2>Sign Up</h2>
-  <form (ngSubmit)="signup()">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" placeholder="Enter your username" [(ngModel)]="username" name="username" required>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <!-- Link to your global CSS file -->
+  </head>
+
+  <body>
+    <div class="signup-container">
+      <img
+        src="../../assets/images/logo2.png"
+        alt="Website Logo"
+        class="logo"
+      />
+      <!-- Add site's logo -->
+      <h2 class="signup-title">Signup</h2>
+      <form (ngSubmit)="signup()">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" [(ngModel)]="username" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" required/>
+        </div>
+        <button class="button" type="submit">Signup</button>
+      </form>
     </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password" [(ngModel)]="password" name="password" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" [(ngModel)]="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="fullName">Full Name</label>
-      <input type="text" id="fullName" placeholder="Enter your full name" [(ngModel)]="fullName" name="fullName" required>
-    </div>
-    <button type="submit">Sign Up</button>
-  </form>
-</div>
+  </body>
+</html>
