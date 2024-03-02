@@ -1,0 +1,19 @@
+<div class="hackathon-list-container">
+  <h2>Hackathon List</h2>
+  <div *ngFor="let hackathon of hackathons">
+    <div class="hackathon-card">
+      <div>
+        <h3>{{ hackathon.name }}</h3>
+        <p>{{ hackathon.theme }}</p>
+      </div>
+      <div>
+        <p><strong>Registration Date Range:</strong> {{ hackathon.registrationDateRange }}</p>
+        <p><strong>Event Date:</strong> {{ hackathon.eventDate }}</p>
+      </div>
+      <div>
+        <button color="primary">Register</button>
+        <button color="accent">Details</button>
+      </div>
+    </div>
+  </div>
+</div>
