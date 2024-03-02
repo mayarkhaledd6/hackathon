@@ -1,0 +1,18 @@
+.hackathon-details-container {
+    padding: 20px;
+  }
+  
+  .hackathon-details-container h3 {
+    margin-top: 20px;
+  }
+  
+  .hackathon-details-container ul {
+    margin-top: 10px;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .hackathon-details-container ul li {
+    margin-bottom: 5px;
+  }
+  
