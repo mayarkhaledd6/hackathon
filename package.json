@@ -2,10 +2,10 @@
   "name": "hackathon-registration-portal",
   "version": "1.0.0",
   "description": "A Hackathon Registration Portal project",
-  "main": "app.js",
+  "main": "app.mjs",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,6 +16,7 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3"
