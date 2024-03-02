@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+/* Import ReadexPro font */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #FFFF ; /* Example primary color */
+    --secondary-color:  #001081 ; /* Example secondary color */
+    --accent-color:  #000000 ; /* Example accent color */
+    --extra-color: #1eed93;
+  }
+  
+/* Apply ReadexPro font to all elements */
+body {
+  font-family: 'Readex Pro', sans-serif;
+}
+
+/* Apply ReadexPro font to specific elements */
+.signup-container h2 {
+  font-family: 'Readex Pro', sans-serif;
+}
+
+/* Apply ReadexPro font to labels */
+label {
+  font-family: 'Readex Pro', sans-serif;
+}
+ 
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+  
+  h1 {
+    color: var(--accent-color);
+  }
+  
+  .button {
+    background-color: var(--extra-color);
+    color: var(--accent-color);
+  }
+  
