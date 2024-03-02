@@ -12,7 +12,8 @@ import { SignupComponent } from './signup/signup.component';
 import { HackathonListComponent } from './hackathon-list/hackathon-list.component';
 import { HackathonDetailsComponent } from './hackathon-details/hackathon-details.component';
 import { HackathonService } from './services/hackathon.service';
-import { ParticipantService } from './services/participant.service';
+import { TeamService } from './services/team.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ParticipantService } from './services/participant.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HackathonService, ParticipantService],
+  providers: [HackathonService, TeamService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

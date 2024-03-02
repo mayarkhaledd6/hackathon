@@ -12,6 +12,7 @@ async function query(sql, params) {
       if (error) {
         reject(error);
       } else {
+      pool.rollback();
         resolve(results);
       }
     });
@@ -27,6 +28,7 @@ const User = {
       // Insert user into the database
       const sql = 'INSERT INTO competitor_users (username, email, password) VALUES (?, ?, ?)';
       await query(sql, [username, email, hashedPassword]);
+
 
       return { message: 'User registered successfully' };
     } catch (error) {
@@ -49,6 +51,20 @@ const User = {
       }
     } catch (error) {
       throw new Error('Error authenticating user: ' + error.message);
+    }
+  },
+  // Function to Get userID
+  async GetUserIDbyEmail(email) {
+    try {
+      // Retrieve user from the database
+      const sql = 'SELECT * FROM competitor_users WHERE email = ?';
+      const [user] = await query(sql, [email]);
+      // Check if user exists and compare passwords
+      if (user) {
+        return user.id;
+      }
+    } catch (error) {
+      // throw new Error('Error authenticating user: ' + error.message);
     }
   }
 };

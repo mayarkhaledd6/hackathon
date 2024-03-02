@@ -86,6 +86,7 @@ const Hackathon = {
       throw new Error('Error getting hackathon by ID: ' + error.message);
     }
   },
+
 };
 
 export default Hackathon;

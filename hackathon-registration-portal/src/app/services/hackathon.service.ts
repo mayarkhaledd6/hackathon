@@ -19,6 +19,10 @@ export class HackathonService {
     return this.http.get<Hackathon>(`${this.baseUrl}/gethackathonbyid/${id}`);
   }
 
+  getHackathonByUserId(userid: number): Observable<Hackathon> {
+    return this.http.get<Hackathon>(`${this.baseUrl}/gethackathonbyuserid/${userid}`);
+  }
+
   createHackathon(hackathon: Hackathon): Observable<Hackathon> {
     return this.http.post<Hackathon>(`${this.baseUrl}/addhackathon`, hackathon);
   }
