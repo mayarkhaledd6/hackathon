@@ -3,61 +3,68 @@
 import Hackathon from '../models/Hackathon.js';
 
 // Create a new hackathon
-export function createHackathon(req, res) {
-  const newHackathon = new Hackathon(req.body);
-  newHackathon.save((err, hackathon) => {
-    if (err) {
-      return res.status(400).json({ error: err.message });
-    }
-    return res.status(201).json(hackathon);
-  });
+export async function createHackathon(req, res) {
+  try
+  {
+    const result= await Hackathon.createHackathon(req.body); 
+    res.json(result);
+  }
+  catch (err) {
+     res.status(400).json({ error: 'Error creating hackathon ' || err.message });
+  }
 }
 
 // Get all hackathons
 export async function getAllHackathons(req, res) {
-  const result= await Hackathon.find((err, hackathons) => {
-    if (err) {
-       res.status(500).json({ error: 'Error retrieving hackathons' });
-    }
-  }); 
-  res.json(result);
+  try
+  {
+    const result= await Hackathon.find(); 
+    res.json(result);
+  }
+  catch (error) {
+    res.status(500).json({ error: 'Error retrieving hackathons ' || error.message });
+  }
 }
 
 // Get a specific hackathon by ID
-export function getHackathonById(req, res) {
-  Hackathon.findById(req.params.id, (err, hackathon) => {
-    if (err) {
-      return res.status(500).json({ error: 'Error retrieving hackathon' });
-    }
-    if (!hackathon) {
-      return res.status(404).json({ error: 'Hackathon not found' });
-    }
-    res.json(hackathon);
-  });
+export async function getHackathonById(req, res) {
+  try
+  {
+    const result= await Hackathon.findById(req.params.id);
+    res.json(result);
+  }
+  catch (error) {
+    res.status(500).json({ error: 'Error retrieving hackathon with id " '|| req.params.id ||' '|| error.message  });
+  }
 }
 
 // Update details of a specific hackathon
-export function updateHackathon(req, res) {
-  Hackathon.update(req.params.id, req.body, { new: true }, (err, hackathon) => {
-    if (err) {
-      return res.status(400).json({ error: err.message });
-    }
-    if (!hackathon) {
-      return res.status(404).json({ error: 'Hackathon not found' });
-    }
-    res.json(hackathon);
-  });
+export async function updateHackathon(req, res) {
+  try
+  {
+    const result= await Hackathon.update(req.params.id, req.body)
+    if (!result) 
+          res.status(404).json({ error: 'Hackathon not found' });
+    else
+          res.json(result);
+  }
+  catch (err) {
+    res.status(500).json({ error: 'Error updating hackathon with id " '|| req.params.id ||' '|| err.message});
+  }
 }
 
 // Delete a specific hackathon by ID
-export function deleteHackathon(req, res) {
-  Hackathon.delete(req.params.id, (err, hackathon) => {
-    if (err) {
-      return res.status(400).json({ error: err.message });
-    }
-    if (!hackathon) {
-      return res.status(404).json({ error: 'Hackathon not found' });
-    }
-    res.json({ message: 'Hackathon deleted successfully' });
-  });
+export async function deleteHackathon(req, res) {
+  try
+  {
+    const result= await Hackathon.delete(req.params.id);
+    if (!result) 
+          res.status(404).json({ error: 'Hackathon not found' });
+    else
+          res.json({ message: 'Hackathon deleted successfully' });
+  }
+  catch (err) {
+    res.status(500).json({ error: 'Error deleting hackathon with id " '|| req.params.id ||' '|| err.message });
+  }
+  
 }
