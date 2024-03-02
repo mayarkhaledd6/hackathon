@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card'; // Import MatCardModule
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 
 import { AppRoutingModule } from './app-routes';
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     MatCardModule, // Add MatCardModule here
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [HackathonService, TeamService, AuthService],
   bootstrap: [AppComponent]

@@ -1,12 +1,30 @@
 <div class="login-container">
-  <h2>Login</h2>
-  <form (ngSubmit)="login()">
-    <div>
-      <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required>
+  <img src="../../assets/images/logo2.png" alt="Website Logo" class="logo">
+  <h2 class="login-title">Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="username" class="label">Username</label>
+      <input type="text" id="username" name="username" formControlName="username" class="input" required>
+      <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="error-message">
+        Username is required
+      </div>
     </div>
-    <div>
-      <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+    <div class="form-group">
+      <label for="password" class="label">Password</label>
+      <input type="password" id="password" name="password" formControlName="password" class="input" required>
+      <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error-message">
+        Password is required
+      </div>
     </div>
-    <button type="submit">Login</button>
+    <div class="form-group">
+      <label class="label">User Type</label>
+      <div class="radio-group">
+        <input type="radio" id="admin" name="userType" value="admin" formControlName="userType">
+        <label for="admin">Admin</label>
+        <input type="radio" id="participant" name="userType" value="participant" formControlName="userType">
+        <label for="participant">Participant</label>
+      </div>
+    </div>
+    <button class="button" type="submit">Login</button>
   </form>
 </div>
