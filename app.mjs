@@ -3,6 +3,7 @@
 import express, { json } from 'express';
 //const cors = require('cors');
 const app = express();
+import cors from 'cors';
 import hackathonRoutes from './routes/hackathonRoutes.js';
 import participantRoutes from './routes/participantRoutes.js';
 import teamRoutes from './routes/teamRoutes.js';
@@ -10,6 +11,8 @@ import authRoutes from './routes/authRoutes.js';
 
 // Middleware
 app.use(json());
+
+app.use(cors());
 //app.use(cors());
 
 // Routes
