@@ -76,6 +76,16 @@ const Hackathon = {
       throw new Error('Error deleting hackathon: ' + error.message);
     }
   },
+  
+  async findByUserId(userId) {
+    try {
+      const sql = 'SELECT h.* FROM hackathons h join teams t on h.id=t.hackathon_id join participants p on p.team_id=t.id WHERE p.userid = ?;';
+      const [hackathon] = await query(sql, [userId]);
+      return hackathon;
+    } catch (error) {
+      throw new Error('Error getting hackathon by ID: ' + error.message);
+    }
+  },
 };
 
 export default Hackathon;
