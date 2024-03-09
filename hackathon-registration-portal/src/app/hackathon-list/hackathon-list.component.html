@@ -1,19 +1,51 @@
-<div class="hackathon-list-container" >
-  <h2>Hackathon List</h2>
-  <div *ngFor="let hackathon of hackathons">
-    <div class="hackathon-card">
-      <div>
-        <h3>{{ hackathon.name }}</h3>
-        <p>{{ hackathon.theme }}</p>
-      </div>
-      <div>
-        <p><strong>Registration Date Range:</strong> {{ hackathon.registrationDateRange }}</p>
-        <p><strong>Event Date:</strong> {{ hackathon.eventDate }}</p>
-      </div>
-      <div>
-        <button color="primary">Register</button>
-        <button color="accent" (click)="btnDetails(hackathon.id);">Details</button>
-      </div>
+<header class="header">
+  <!-- Add your logo here -->
+  <img src="../../assets/images/logo7.png" alt="Logo" class="logo">
+  <div class="header-buttons">
+    <button class="logout-button" (click)="home()">Home</button>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</header>
+
+<div class="hackathon-list-container">
+  <h2 class="hackathon-list-title">Hackathon List</h2>
+  <div *ngFor="let hackathon of hackathons" class="hackathon-card">
+    <div class="hackathon-details">
+      <h3 class="hackathon-name">{{ hackathon.name }}</h3>
+      <p class="hackathon-theme">{{ hackathon.theme }}</p>
+      <p><strong>Registration Date Range:</strong> {{ hackathon.registration_date_range | dateRange }}</p>
+      <p><strong>Event Date:</strong> {{ hackathon.event_date | date: 'mediumDate' }}</p>
+
+      <p><strong>Challenge Titles:</strong>
+        <ng-container *ngIf="hackathon.challenge_titles && hackathon.challenge_titles.length > 0">
+          <mat-chip-listbox class="mat-chip-listbox-stacked" aria-label="Color selection">
+            <mat-chip-option *ngFor="let title of hackathon.challenge_titles | challengeTitles">
+              {{title}}
+            </mat-chip-option>
+          </mat-chip-listbox>
+        </ng-container>
+        <ng-container *ngIf="!hackathon.challenge_titles || hackathon.challenge_titles.length === 0">
+          None
+        </ng-container>
+      </p>
+
+      <p><strong>Max Team Size:</strong> {{ hackathon.max_team_size }}</p>
+      <p><strong>Max Number of Teams:</strong> {{ hackathon.max_num_of_teams }}</p>
+    </div>
+    <div class="hackathon-actions">
+      <button class="buttonSubmit">Register</button>
+      <button class="button" (click)="btnDetails(hackathon.id)">Details</button>
     </div>
   </div>
+  <div *ngIf="hackathons.length === 0" class="no-hackathons-message">
+    <p>No hackathons available at the moment.</p>
+  </div>
 </div>
+
+
+
+
+
+
+
+

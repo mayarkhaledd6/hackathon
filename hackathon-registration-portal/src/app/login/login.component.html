@@ -1,7 +1,7 @@
 <div class="login-container">
   <img src="../../assets/images/logo2.png" alt="Website Logo" class="logo">
   <h2 class="login-title">Login</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+  <form [formGroup]="loginForm" (ngSubmit)="login($event)" novalidate>
     <div class="form-group">
       <label for="username" class="label">Username</label>
       <input type="text" id="username" name="username" formControlName="username" class="input" required>

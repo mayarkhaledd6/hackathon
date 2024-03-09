@@ -1,86 +1,266 @@
-.hackathon-details-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+.hackathon-list-container {
+  padding: 20px;
 }
 
-.hackathon-details-container h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.hackathon-details-container div {
+.hackathon-card {
   margin-bottom: 20px;
 }
 
-.hackathon-details-container p {
-  margin-bottom: 10px;
+.mat-card-header {
+  background-color: #f0f0f0;
+}
+/* styles.css (or any other CSS file you use) */
+
+/* styles.css */
+
+/* Container for the list of hackathons */
+.hackathon-list-container {
+max-width: 800px; /* Adjust as needed */
+margin: 0 auto;
 }
 
-.hackathon-details-container strong {
-  font-weight: 700;
+/* Hackathon card */
+.hackathon-card {
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 10px;
+margin-bottom: 20px;
+display: flex;
+justify-content: space-between; /* Align items evenly */
+align-items: center; /* Center items vertically */
 }
 
-.hackathon-details-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Hackathon name and theme */
+.hackathon-card > div:nth-child(1) {
+flex: 1; /* Take up remaining space */
 }
 
-.hackathon-details-container ul li {
-  margin-bottom: 5px;
-  margin-left: 25px;
+/* Hackathon details */
+.hackathon-card > div:nth-child(2) {
+flex: 2; /* Take up double space */
+padding: 0 10px; /* Add padding */
 }
 
-.hackathon-details-container ul li:before {
-  content: '•';
-  margin-right: 5px;
-  color: #37a000;
+/* Buttons */
+.hackathon-card > div:nth-child(3) {
+flex: 1; /* Take up remaining space */
+display: flex;
+justify-content: flex-end; /* Align items to the end */
 }
 
-.hackathon-details-container h3 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 30px;
-  margin-bottom: 20px;
+/* Button */
+.hackathon-card button {
+margin-left: 10px;
+padding: 5px 10px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-  .hackathon-details-container {
-    padding: 30px;
-    border-radius: 10px;
-  }
-
-  .hackathon-details-container h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-
-  .hackathon-details-container h3 {
-    font-size: 22px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-  }
+/* Primary button */
+.hackathon-card button[color="primary"] {
+background-color: #007bff;
+color: #fff;
 }
 
-@media screen and (max-width: 576px) {
-  .hackathon-details-container {
-    padding: 20px;
-    border-radius: 5px;
-  }
+/* Accent button */
+.hackathon-card button[color="accent"] {
+background-color: #6c695e;
+color: #fff;
+}
 
-  .hackathon-details-container h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
+/* Button hover effect */
+.hackathon-card button:hover {
+opacity: 0.8;
+}
 
-  .hackathon-details-container h3 {
-    font-size: 20px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-  }
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+/* For smaller screens, switch to a single column layout */
+.hackathon-card {
+  flex-direction: column; /* Stack items vertically */
+}
+}
+
+.login-container {
+width: 400px; /* Keep the same width */
+padding: 40px; /* Keep the same padding */
+background-color: #ffffff;
+border-radius: 10px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+text-align: center; /* Center align content */
+margin: auto; /* Add this line to center the container */
+margin-top: 10vh; /* Adjust the top margin as needed */
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+font-weight: bold;
+display: block;
+margin-bottom: 10px; /* Keep the same margin */
+color: var(--accent-color); /* Use accent color for labels */
+font-family: 'Readex Pro', sans-serif; /* Apply ReadexPro font */
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+width: 100%;
+padding: 12px; /* Keep the same padding */
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+box-sizing: border-box; /* Include padding and border in the element's total width and height */
+font-family: 'Readex Pro', sans-serif; /* Apply ReadexPro font */
+}
+
+.button {
+width: 100%;
+padding: 12px;
+background-color: var(--extra-color);
+color: var(--accent-color);
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 20px; /* Keep the same margin */
+font-family: 'Readex Pro', sans-serif; /* Apply ReadexPro font */
+}
+
+.button:hover {
+background-color: var(--accent-color);
+color: var(--extra-color);
+}
+
+.buttonSubmit {
+width: 100%;
+padding: 12px;
+background-color: var(--secondary-color);
+color: var(--primary-color);
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 20px; /* Keep the same margin */
+font-family: 'Readex Pro', sans-serif; /* Apply ReadexPro font */
+}
+
+.buttonSubmit:hover {
+background-color: var(--primary-color);
+color: var(--secondary-color);
+}
+
+.logo {
+width: 100px; /* Keep the same width */
+margin-bottom: 20px; /* Keep the same margin */
+}
+
+.radio-group {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.radio-group input[type="radio"] {
+margin-right: 10px;
+}
+
+.radio-group label {
+margin-right: 20px;
+}
+
+
+/*/
+/*/
+.hackathon-list-container {
+max-width: 800px;
+margin: 0 auto;
+}
+
+.hackathon-card {
+background-color: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 20px;
+margin-bottom: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hackathon-card:hover {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hackathon-name {
+font-size: 24px;
+margin-bottom: 5px;
+}
+
+.hackathon-theme {
+color: #666;
+}
+
+.hackathon-dates {
+margin-top: 10px;
+}
+
+.hackathon-actions button {
+cursor: pointer;
+padding: 8px 16px;
+border: none;
+border-radius: 4px;
+margin-right: 10px;
+font-size: 16px;
+}
+
+.register-button {
+background-color: #4caf50;
+color: white;
+}
+
+.register-button:hover {
+background-color: #45a049;
+}
+
+.details-button {
+background-color: #008CBA;
+color: white;
+}
+
+.details-button:hover {
+background-color: #0077A3;
+}
+
+.no-hackathons-message {
+margin-top: 20px;
+text-align: center;
+color: #999;
+}
+
+.header {
+  background-color: var(--secondary-color); /* Example background color */
+  height: 50px;
+  display: flex;
+  border-radius: 127px;
+  align-items: center;
+  padding: 0 20px; /* Add padding to space out the logo and buttons */
+}
+
+.logo {
+  height: auto;
+  margin-bottom: 6px;
+}
+
+.header-buttons {
+  margin-left: auto; /* Push the buttons to the right */
+}
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Readex Pro', sans-serif;
+  margin-left: 10px; /* Add margin between buttons */
+  color: var(--primary-color);
 }

@@ -21,7 +21,7 @@ export async function authenticate(req, res) {
     try {
         // Check if user with the given email and password exists
         const user = await User.authenticate(email, password);
-
+        console.log(user);
         // Check if user exists and compare passwords
         if (user) {
             // Authentication successful

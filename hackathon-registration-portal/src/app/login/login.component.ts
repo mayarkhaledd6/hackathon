@@ -20,7 +20,8 @@ export class LoginComponent {
     });
   }
 
-  onSubmit() {
+  login(event: Event) {
+    event.preventDefault(); // Prevent default form submission
     const userType = this.loginForm.value.userType;
     if (this.loginForm.valid && userType == "admin") {
       const username = this.loginForm.value.username;
@@ -31,6 +32,7 @@ export class LoginComponent {
         (response) => {
           // Handle successful login
           console.log('Login successful');
+          console.log(response);
           this.router.navigate(['/hackathons']);
         },
         (error) => {
@@ -49,6 +51,7 @@ export class LoginComponent {
         (response) => {
           // Handle successful login
           console.log('Login successful');
+          console.log(response);
           this.router.navigate(['/hackathons']);
         },
         (error) => {

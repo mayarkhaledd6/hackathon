@@ -4,6 +4,8 @@ import { Hackathon } from '../models/hackathon.model';
 import { MatCardModule } from '@angular/material/card';
 import { AppModule } from '../app.module';
 import { Router } from '@angular/router';
+import { MatChipsModule } from '@angular/material/chips';
+
 
 
 @Component({
@@ -16,19 +18,7 @@ export class HackathonListComponent {
 
   // Fetch hackathons from backend service or mock data
   constructor(private hackathonService: HackathonService,private router: Router) {
-    // this.hackathons = [
-    //   {
-    //     name: 'Hackathon 1',
-    //     theme: 'Theme 1',
-    //     registrationDateRange: '01/01/2022 - 01/15/2022',
-    //     eventDate: '02/01/2022',
-    //     challenges: ['Challenge 1', 'Challenge 2'],
-    //     maxTeamSize: 4,
-    //     maxNumberOfTeams: 20,
-    //     registeredTeams: [{ name: 'Team 1' }, { name: 'Team 2' }]
-    //   },
-    //   // Add more hackathon objects as needed
-    // ];
+ 
   }
 
   ngOnInit(): void {
@@ -39,7 +29,19 @@ export class HackathonListComponent {
 
   getHackathons(): void {
     this.hackathonService.getAllHackathons()
-      .subscribe(hackathons => this.hackathons = hackathons);
+      .subscribe(hackathons => {
+        this.hackathons = hackathons;
+      });
+  }
+
+  logout(): void {
+    // Redirect to login page
+    this.router.navigate(['']);
+  }
+
+  home(): void {
+    // Redirect to home page
+    this.router.navigate(['hackathons']);
   }
 
   btnDetails(id: number): void {
